@@ -57,12 +57,13 @@
     box-shadow: 0 calc(0.04 * var(--min-display-size)) calc(0.06 * var(--min-display-size)) rgba(0, 0, 0, 0.1);
     border: calc(0.02 * var(--min-display-size)) solid #ccc;
     transition: transform 0.2s, box-shadow 0.2s;
+    touch-action: manipulation;
 }
 
-/* .inc-dec-button:active {
+.inc-dec-button:active {
     transform: scale(1.1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-} */
+}
 
 /* Segment shapes and positions */
 .a { top: 0; left: 10%; width: 80%; height: calc(0.05 * var(--min-display-size)); }

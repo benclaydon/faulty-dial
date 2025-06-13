@@ -95,17 +95,38 @@ function getDigits(num) {
 
 function setUnbrokenDial(num) {
     const arr = getDigits(num)
-    setSegments(DEFAULT_MAP[arr[0]], "unbroken1");
+    setSegments(DEFAULT_MAP[arr[3]], "unbroken0");
+    setSegments(DEFAULT_MAP[arr[2]], "unbroken1");
     setSegments(DEFAULT_MAP[arr[1]], "unbroken2");
-    setSegments(DEFAULT_MAP[arr[2]], "unbroken3");
-    setSegments(DEFAULT_MAP[arr[3]], "unbroken4");
+    setSegments(DEFAULT_MAP[arr[0]], "unbroken3");
 }
 
 function setBrokenDial(num, map) {
     const arr = getDigits(num);
 
-    setSegments(map[0][arr[0]], "broken1");
-    setSegments(map[1][arr[1]], "broken2");
-    setSegments(map[2][arr[2]], "broken3");
-    setSegments(map[3][arr[3]], "broken4");
+    setSegments(map[0][arr[3]], "broken0");
+    setSegments(map[1][arr[2]], "broken1");
+    setSegments(map[2][arr[1]], "broken2");
+    setSegments(map[3][arr[0]], "broken3");
+}
+
+function increaseVal(currentVal, buttonNum) {
+    var x = (currentVal + Math.pow(10, buttonNum)) % Math.pow(10, NUM_DIALS);
+    setUnbrokenDial(x);
+    return x;
+}
+
+function decreaseVal(currentVal, buttonNum) {
+    console.log(currentVal)
+    var x = currentVal - Math.pow(10, buttonNum)
+
+    if (x < 0) {
+        x += Math.pow(10, NUM_DIALS);
+    }
+
+    x = x % Math.pow(10, NUM_DIALS);
+
+    console.log(x)
+    setUnbrokenDial(x);
+    return x; 
 }

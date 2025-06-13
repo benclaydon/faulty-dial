@@ -11,8 +11,8 @@
 <div class="dial-container">
 
 <div class="dial-button">
-  <button>+</button>
-  <div class="display" id="unbroken1">
+  <button id="increase_unbroken3" onclick="unbroken_num = increaseVal(unbroken_num, 3)">+</button>
+  <div class="display" id="unbroken3">
     <div class="segment a"></div>
     <div class="segment b"></div>
     <div class="segment c"></div>
@@ -21,7 +21,7 @@
     <div class="segment f"></div>
     <div class="segment g"></div>
   </div>
-  <button>-</button>
+  <button id="decrease_unbroken3" onclick="unbroken_num = decreaseVal(unbroken_num, 3)">-</button>
 </div>
 
 <div class="dial-button">
@@ -40,7 +40,7 @@
 
 <div class="dial-button">
   <button>+</button>
-  <div class="display" id="unbroken3">
+  <div class="display" id="unbroken1">
     <div class="segment a"></div>
     <div class="segment b"></div>
     <div class="segment c"></div>
@@ -54,7 +54,7 @@
 
 <div class="dial-button">
   <button>+</button>
-  <div class="display" id="unbroken4">
+  <div class="display" id="unbroken0">
     <div class="segment a"></div>
     <div class="segment b"></div>
     <div class="segment c"></div>
@@ -70,7 +70,7 @@
 <div class="dial-container">
   <div class="dial-button">
     <button>+</button>
-    <div class="display" id="broken1">
+    <div class="display" id="broken3">
       <div class="segment a"></div>
       <div class="segment b"></div>
       <div class="segment c"></div>
@@ -98,7 +98,7 @@
 
   <div class="dial-button">
     <button>+</button>
-    <div class="display" id="broken3">
+    <div class="display" id="broken1">
       <div class="segment a"></div>
       <div class="segment b"></div>
       <div class="segment c"></div>
@@ -112,7 +112,7 @@
 
   <div class="dial-button">
     <button>+</button>
-    <div class="display" id="broken4">
+    <div class="display" id="broken0">
       <div class="segment a"></div>
       <div class="segment b"></div>
       <div class="segment c"></div>
@@ -128,7 +128,6 @@
 
 <script src="setup.js"></script>
 
-
 <script>
 
 
@@ -142,13 +141,13 @@
   }
 
   const start_broken = rng(randomState.nextSeed);
-  const start_broken_num = Math.floor((Math.pow(10, NUM_DIALS)) * start_broken.value);
+  var broken_num = Math.floor((Math.pow(10, NUM_DIALS)) * start_broken.value);
 
   const start_unbroken = rng(start_broken.nextSeed);
-  const start_unbroken_num = Math.floor((Math.pow(10, NUM_DIALS)) * start_unbroken.value);
+  var unbroken_num = Math.floor((Math.pow(10, NUM_DIALS)) * start_unbroken.value);
 
-  setUnbrokenDial(start_unbroken_num);
-  setBrokenDial(start_broken_num, broken_map);
+  setUnbrokenDial(unbroken_num);
+  setBrokenDial(broken_num, broken_map);
 </script>
 
 </body>

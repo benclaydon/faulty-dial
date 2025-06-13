@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>7 Segment Display</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- One individual display -->
+<div class="display" id="unbroken1">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+<div class="display" id="unbroken2">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+<div class="display" id="unbroken3">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+<div class="display" id="unbroken4">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+<div class="display" id="broken1">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+<div class="display" id="broken2">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+<div class="display" id="broken3">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+<div class="display" id="broken4">
+  <div class="segment a"></div>
+  <div class="segment b"></div>
+  <div class="segment c"></div>
+  <div class="segment d"></div>
+  <div class="segment e"></div>
+  <div class="segment f"></div>
+  <div class="segment g"></div>
+</div>
+
+
+<script src="setup.js"></script>
+
+
+<script>
+
+
+
+  let seed = getSeed();
+  let randomState = getBrokenSegments(seed);
+  let broken_map = Array(NUM_DIALS).fill(0);
+
+  for (var i = 0; i < NUM_DIALS; i++) {
+    broken_map[i] = getNewMap(i, randomState.segments);
+  }
+
+  const start_broken = rng(randomState.nextSeed);
+  const start_broken_num = Math.floor((Math.pow(10, NUM_DIALS)) * start_broken.value);
+
+  const start_unbroken = rng(start_broken.nextSeed);
+  const start_unbroken_num = Math.floor((Math.pow(10, NUM_DIALS)) * start_unbroken.value);
+
+  setUnbrokenDial(start_unbroken_num);
+  setBrokenDial(start_broken_num, broken_map);
+
+
+  
+</script>
+
+</body>
+</html>

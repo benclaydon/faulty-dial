@@ -1,0 +1,27 @@
+.display {
+    position: relative;
+    width: 120px;
+    height: 200px;
+    margin: 20px;
+  }
+
+  .segment {
+    position: absolute;
+    background-color: #222;
+    opacity: 0.1;
+    transition: opacity 0.2s;
+  }
+
+  .on {
+    opacity: 1;
+    background-color: red;
+  }
+
+  /* Segment shapes and positions */
+  .a { top: 0; left: 20px; width: 80px; height: 20px; }
+  .b { top: 20px; right: 0; width: 20px; height: 80px; }
+  .c { bottom: 20px; right: 0; width: 20px; height: 80px; }
+  .d { bottom: 0; left: 20px; width: 80px; height: 20px; }
+  .e { bottom: 20px; left: 0; width: 20px; height: 80px; }
+  .f { top: 20px; left: 0; width: 20px; height: 80px; }
+  .g { top: 90px; left: 20px; width: 80px; height: 20px; }

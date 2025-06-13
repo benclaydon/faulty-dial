@@ -57,7 +57,6 @@
     box-shadow: 0 calc(0.04 * var(--min-display-size)) calc(0.06 * var(--min-display-size)) rgba(0, 0, 0, 0.1);
     border: calc(0.02 * var(--min-display-size)) solid #ccc;
     transition: transform 0.2s, box-shadow 0.2s;
-    touch-action: manipulation;
 }
 
 .inc-dec-button:active {

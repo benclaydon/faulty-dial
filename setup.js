@@ -93,40 +93,61 @@ function getDigits(num) {
     return digits;
 }
 
+function arrayToNumber(arr) {
+    return parseInt(arr.join(''), 10);
+}
+
 function setUnbrokenDial(num) {
     const arr = getDigits(num)
-    setSegments(DEFAULT_MAP[arr[3]], "unbroken0");
-    setSegments(DEFAULT_MAP[arr[2]], "unbroken1");
-    setSegments(DEFAULT_MAP[arr[1]], "unbroken2");
-    setSegments(DEFAULT_MAP[arr[0]], "unbroken3");
+    setSegments(DEFAULT_MAP[arr[0]], "unbroken0");
+    setSegments(DEFAULT_MAP[arr[1]], "unbroken1");
+    setSegments(DEFAULT_MAP[arr[2]], "unbroken2");
+    setSegments(DEFAULT_MAP[arr[3]], "unbroken3");
 }
 
 function setBrokenDial(num, map) {
     const arr = getDigits(num);
 
-    setSegments(map[0][arr[3]], "broken0");
-    setSegments(map[1][arr[2]], "broken1");
-    setSegments(map[2][arr[1]], "broken2");
-    setSegments(map[3][arr[0]], "broken3");
+    setSegments(map[0][arr[0]], "broken0");
+    setSegments(map[1][arr[1]], "broken1");
+    setSegments(map[2][arr[2]], "broken2");
+    setSegments(map[3][arr[3]], "broken3");
 }
 
-function increaseVal(currentVal, buttonNum) {
-    var x = (currentVal + Math.pow(10, buttonNum)) % Math.pow(10, NUM_DIALS);
-    setUnbrokenDial(x);
+function increaseVal(currentVal, buttonNum, isBroken, map=null) {
+    var arr = getDigits(currentVal);
+
+    arr[buttonNum] = (arr[buttonNum] + 1) % 10;
+
+    var x = arrayToNumber(arr);
+
+    if (isBroken) {
+        setBrokenDial(x, map);
+    } else {
+        setUnbrokenDial(x);
+    }
     return x;
 }
 
-function decreaseVal(currentVal, buttonNum) {
-    console.log(currentVal)
-    var x = currentVal - Math.pow(10, buttonNum)
+function decreaseVal(currentVal, buttonNum, isBroken, map=null) {
+    var arr = getDigits(currentVal);
 
-    if (x < 0) {
-        x += Math.pow(10, NUM_DIALS);
+    arr[buttonNum] = arr[buttonNum] - 1;
+
+    if (arr[buttonNum] === -1) {
+        arr[buttonNum] = 9;
+    } else {
+        arr[buttonNum] = Math.abs(arr[buttonNum]) % 10;
     }
 
-    x = x % Math.pow(10, NUM_DIALS);
+    var x = arrayToNumber(arr);
 
-    console.log(x)
-    setUnbrokenDial(x);
+
+    if (isBroken) {
+        setBrokenDial(x, map);
+    } else {
+        setUnbrokenDial(x);
+    }
+    
     return x; 
 }

@@ -114,22 +114,29 @@ function setBrokenDial(num, map) {
     setSegments(map[3][arr[3]], "broken3");
 }
 
-function increaseVal(currentVal, buttonNum, isBroken, map=null) {
+function updateMoves() {
+    moves += 1;
+    document.getElementById('moves-counter').textContent = moves;
+  }
+
+function increaseVal(currentVal, buttonNum, map=null) {
     var arr = getDigits(currentVal);
 
     arr[buttonNum] = (arr[buttonNum] + 1) % 10;
 
     var x = arrayToNumber(arr);
 
-    if (isBroken) {
+    if (map != null) {
         setBrokenDial(x, map);
+        updateMoves();
     } else {
         setUnbrokenDial(x);
     }
     return x;
 }
 
-function decreaseVal(currentVal, buttonNum, isBroken, map=null) {
+
+function decreaseVal(currentVal, buttonNum, map=null) {
     var arr = getDigits(currentVal);
 
     arr[buttonNum] = arr[buttonNum] - 1;
@@ -142,12 +149,23 @@ function decreaseVal(currentVal, buttonNum, isBroken, map=null) {
 
     var x = arrayToNumber(arr);
 
-
-    if (isBroken) {
+    if (map != null) {
         setBrokenDial(x, map);
+        updateMoves();
     } else {
         setUnbrokenDial(x);
     }
     
     return x; 
+}
+
+function submit(broken, unbroken) {
+    if (broken === unbroken) {
+        alert("Solved in " + moves + " moves!");
+    } else {
+        alert("Incorrect - 5 added to move counter!");
+        for (var i = 0; i < 5; i++) {
+            updateMoves();
+        }
+    }
 }

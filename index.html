@@ -10,64 +10,7 @@
 
 <body style="background-color: #1a1a1a;"></body>
   <div>
-  <!-- One individual display -->
-  <div class="dial-container">
-    <div class="dial-button">
-      <button class="inc-dec-button" id="increase_unbroken3" onclick="unbrokenNum = increaseVal(unbrokenNum, 3)">+</button>
-      <div class="display" id="unbroken3">
-        <div class="segment a"></div>
-        <div class="segment b"></div>
-        <div class="segment c"></div>
-        <div class="segment d"></div>
-        <div class="segment e"></div>
-        <div class="segment f"></div>
-        <div class="segment g"></div>
-      </div>
-      <button class="inc-dec-button" id="decrease_unbroken3" onclick="unbrokenNum = decreaseVal(unbrokenNum, 3)">-</button>
-    </div>
 
-    <div class="dial-button">
-      <button class="inc-dec-button" id="increase_unbroken2" onclick="unbrokenNum = increaseVal(unbrokenNum, 2)">+</button>
-      <div class="display" id="unbroken2">
-        <div class="segment a"></div>
-        <div class="segment b"></div>
-        <div class="segment c"></div>
-        <div class="segment d"></div>
-        <div class="segment e"></div>
-        <div class="segment f"></div>
-        <div class="segment g"></div>
-      </div>
-      <button class="inc-dec-button" id="decrease_unbroken2" onclick="unbrokenNum = decreaseVal(unbrokenNum, 2)">-</button>
-    </div>
-
-    <div class="dial-button">
-      <button class="inc-dec-button" id="increase_unbrokenq" onclick="unbrokenNum = increaseVal(unbrokenNum, 1)">+</button>
-      <div class="display" id="unbroken1">
-        <div class="segment a"></div>
-        <div class="segment b"></div>
-        <div class="segment c"></div>
-        <div class="segment d"></div>
-        <div class="segment e"></div>
-        <div class="segment f"></div>
-        <div class="segment g"></div>
-      </div>
-      <button class="inc-dec-button" id="decrease_unbroken1" onclick="unbrokenNum = decreaseVal(unbrokenNum, 1)">-</button>
-    </div>
-
-    <div class="dial-button">
-      <button class="inc-dec-button" id="increase_unbroken0" onclick="unbrokenNum = increaseVal(unbrokenNum, 0)">+</button>
-      <div class="display" id="unbroken0">
-        <div class="segment a"></div>
-        <div class="segment b"></div>
-        <div class="segment c"></div>
-        <div class="segment d"></div>
-        <div class="segment e"></div>
-        <div class="segment f"></div>
-        <div class="segment g"></div>
-      </div>
-      <button class="inc-dec-button" id="decrease_unbroken0" onclick="unbrokenNum = decreaseVal(unbrokenNum, 0)">-</button>
-    </div>
-  </div>
 
   <div class="dial-container">
     <div class="dial-button">
@@ -126,6 +69,65 @@
       <button class="inc-dec-button" id="decrease_ broken0" onclick="brokenNum = decreaseVal(brokenNum, 0, brokenMap)">-</button>
     </div>
   </div>
+
+    <!-- One individual display -->
+    <div class="dial-container">
+      <div class="dial-button">
+        <button class="inc-dec-button" id="increase_unbroken3" onclick="unbrokenNum = increaseVal(unbrokenNum, 3)">+</button>
+        <div class="display" id="unbroken3">
+          <div class="segment a"></div>
+          <div class="segment b"></div>
+          <div class="segment c"></div>
+          <div class="segment d"></div>
+          <div class="segment e"></div>
+          <div class="segment f"></div>
+          <div class="segment g"></div>
+        </div>
+        <button class="inc-dec-button" id="decrease_unbroken3" onclick="unbrokenNum = decreaseVal(unbrokenNum, 3)">-</button>
+      </div>
+  
+      <div class="dial-button">
+        <button class="inc-dec-button" id="increase_unbroken2" onclick="unbrokenNum = increaseVal(unbrokenNum, 2)">+</button>
+        <div class="display" id="unbroken2">
+          <div class="segment a"></div>
+          <div class="segment b"></div>
+          <div class="segment c"></div>
+          <div class="segment d"></div>
+          <div class="segment e"></div>
+          <div class="segment f"></div>
+          <div class="segment g"></div>
+        </div>
+        <button class="inc-dec-button" id="decrease_unbroken2" onclick="unbrokenNum = decreaseVal(unbrokenNum, 2)">-</button>
+      </div>
+  
+      <div class="dial-button">
+        <button class="inc-dec-button" id="increase_unbrokenq" onclick="unbrokenNum = increaseVal(unbrokenNum, 1)">+</button>
+        <div class="display" id="unbroken1">
+          <div class="segment a"></div>
+          <div class="segment b"></div>
+          <div class="segment c"></div>
+          <div class="segment d"></div>
+          <div class="segment e"></div>
+          <div class="segment f"></div>
+          <div class="segment g"></div>
+        </div>
+        <button class="inc-dec-button" id="decrease_unbroken1" onclick="unbrokenNum = decreaseVal(unbrokenNum, 1)">-</button>
+      </div>
+  
+      <div class="dial-button">
+        <button class="inc-dec-button" id="increase_unbroken0" onclick="unbrokenNum = increaseVal(unbrokenNum, 0)">+</button>
+        <div class="display" id="unbroken0">
+          <div class="segment a"></div>
+          <div class="segment b"></div>
+          <div class="segment c"></div>
+          <div class="segment d"></div>
+          <div class="segment e"></div>
+          <div class="segment f"></div>
+          <div class="segment g"></div>
+        </div>
+        <button class="inc-dec-button" id="decrease_unbroken0" onclick="unbrokenNum = decreaseVal(unbrokenNum, 0)">-</button>
+      </div>
+    </div>
 
   <div class="dial-contain">
     <button class="inc-dec-button" id="submit" onclick="submit(brokenNum, unbrokenNum)">Submit | Moves: 0 </button>

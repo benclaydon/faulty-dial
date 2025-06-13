@@ -11,6 +11,8 @@
 
 .dial-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .segment {
@@ -23,6 +25,14 @@
 .on {
     opacity: 1;
     background-color: red;
+}
+
+.dial-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: calc(0.02 * var(--min-display-size));
 }
 
 /* Segment shapes and positions */

@@ -17,8 +17,8 @@
 
 .segment {
     position: absolute;
-    background-color: #222;
-    opacity: 0.1;
+    background-color: red;
+    opacity: 0.05;
     transition: opacity 0.2s;
 }
 
@@ -33,6 +33,28 @@
     justify-content: center;
     align-items: center;
     margin: calc(0.02 * var(--min-display-size));
+}
+
+
+.inc-dec-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: calc(0.01 * var(--min-display-size));
+    background-color: white;
+    color: black;
+    border-radius: calc(0.1 * var(--min-display-size));
+    padding: calc(0.04 * var(--min-display-size)) calc(0.12 * var(--min-display-size));
+    font-size: calc(0.1 * var(--min-display-size));
+    box-shadow: 0 calc(0.04 * var(--min-display-size)) calc(0.06 * var(--min-display-size)) rgba(0, 0, 0, 0.1);
+    border: calc(0.02 * var(--min-display-size)) solid #ccc;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.inc-dec-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Segment shapes and positions */

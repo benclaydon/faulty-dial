@@ -59,10 +59,10 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.inc-dec-button:active {
+/* .inc-dec-button:active {
     transform: scale(1.1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Segment shapes and positions */
 .a { top: 0; left: 10%; width: 80%; height: calc(0.05 * var(--min-display-size)); }

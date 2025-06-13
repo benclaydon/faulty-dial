@@ -1,27 +1,35 @@
+:root {
+    --min-display-size: min(25vw, 25vh);
+}
+
 .display {
     position: relative;
-    width: 120px;
-    height: 200px;
-    margin: 20px;
-  }
+    width: calc( 0.4 * var(--min-display-size));
+    height: calc(var(--min-display-size));
+    margin: 2vh; /* 2% of viewport height */
+}
 
-  .segment {
+.dial-container {
+    display: flex;
+}
+
+.segment {
     position: absolute;
     background-color: #222;
     opacity: 0.1;
     transition: opacity 0.2s;
-  }
+}
 
-  .on {
+.on {
     opacity: 1;
     background-color: red;
-  }
+}
 
-  /* Segment shapes and positions */
-  .a { top: 0; left: 20px; width: 80px; height: 20px; }
-  .b { top: 20px; right: 0; width: 20px; height: 80px; }
-  .c { bottom: 20px; right: 0; width: 20px; height: 80px; }
-  .d { bottom: 0; left: 20px; width: 80px; height: 20px; }
-  .e { bottom: 20px; left: 0; width: 20px; height: 80px; }
-  .f { top: 20px; left: 0; width: 20px; height: 80px; }
-  .g { top: 90px; left: 20px; width: 80px; height: 20px; }
+/* Segment shapes and positions */
+.a { top: 0; left: 10%; width: 80%; height: calc(0.05 * var(--min-display-size)); }
+.b { top: calc(0.05 * var(--min-display-size)); right: 0; width: calc(0.05 * var(--min-display-size)); height: 40%; }
+.c { bottom: calc(0.05 * var(--min-display-size)); right: 0; width: calc(0.05 * var(--min-display-size)); height: 40%; }
+.d { bottom: 0; left: 10%; width: 80%; height: calc(0.05 * var(--min-display-size)); }
+.e { bottom: calc(0.05 * var(--min-display-size)); left: 0; width: calc(0.05 * var(--min-display-size)); height: 40%; }
+.f { top: calc(0.05 * var(--min-display-size)); left: 0; width: calc(0.05 * var(--min-display-size)); height: 40%; }
+.g { top: 45%; left: 10%; width: 80%; height: calc(0.05 * var(--min-display-size)); }

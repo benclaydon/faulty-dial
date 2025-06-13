@@ -1,5 +1,7 @@
 /// Dial stuff
 
+
+
 // Maps the numbers to the display configuration of the 7 segment display
 const DEFAULT_MAP = {
     0: [1, 1, 1, 1, 1, 1, 0],

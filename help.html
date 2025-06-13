@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Page</title>
+</head>
+<body>
+    <header>
+        <h1>Game Instructions</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Objective</h2>
+            <p>The goal of the game is to match the numbers displayed on the faulty dial (top) and the solution dial (bottom) in the fewest number of moves. Each dial is represented by a 7-segment display which may take values 0-9. Each dial initially shows two totally random 4-digit numbers.</p>
+        </section>
+        <section>
+            <h2>Faulty Segments</h2>
+            <p>The faulty dial has some segments which are faulty. This means that the state of those faulty segments is inverted. As an example, a 0 with a single faulty centre segment would become an 8, as the normally OFF state has been inverted to ON. Similarly, a 7 with only a faulty top horizontal segment would show 1, as it has been inverted from ON to OFF.</p>
+        </section>
+        <section>
+            <h2>Segment Details</h2>
+            <p>A digit has 7 individual types of segment, and a puzzle consists of 4 digits. Each type of segment is faulty exactly once in each puzzle. Therefore if a given segment (for example the middle horizontal segment) is known to be faulty in one digit, it is guaranteed to be correct and fault-free in all other digits. Accordingly, there are exactly 7 faulty segments in the whole puzzle. However, multiple segments (or none at all) may be faulty in a single digit.</p>
+        </section>
+        <section>
+            <h2>Controls</h2>
+            <p>The + and - buttons may be used to change the faulty and solution dials individually. Pressing + increments the corresponding digit by 1 and - decrements the corresponding digit by 1. Pressing + on a 9 will set that digit to 0 and, conversely, pressing - on a 0 will set that digit to 9. Changing the values on the dial in this way does not change the position of the faulty segments; these are fixed for each daily puzzle. Changing the solution dial does not count as a move, but changing the faulty dial does. A solution is correct when the faulty number matches the solution number after accounting for the faulty segments.</p>
+        </section>
+        <section>
+            <h2>Winning and Penalties</h2>
+            <p>If correct, you will see a success message with the number of moves taken. If incorrect, 5 penalty moves will be added to your move counter.</p>
+        </section>
+    </main>
+</body>
+</html>

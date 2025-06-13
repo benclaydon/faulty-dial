@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>7 Segment Display</title>
+  <title>Faulty Dial</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="/favicon.png"/>
 </head>
 
 <body style="background-color: #1a1a1a;"></body>
@@ -126,11 +127,9 @@
     </div>
   </div>
 
-  <button class="inc-dec-button" id="submit" onclick="submit(brokenNum, unbrokenNum)">Submit</button>
-  <button class="inc-dec-button" onclick='window.location.href = "help.html";'>Instructions</button>
-  
-  <div>
-    Moves: <span id="moves-counter">0</span>
+  <div class="dial-contain">
+    <button class="inc-dec-button" id="submit" onclick="submit(brokenNum, unbrokenNum)">Submit | Moves: 0 </button>
+    <button class="inc-dec-button" onclick='window.location.href = "help.html";'>Instructions</button>
   </div>
 
   <script src="setup.js"></script>

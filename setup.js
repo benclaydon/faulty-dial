@@ -118,7 +118,8 @@ function setBrokenDial(num, map) {
 
 function updateMoves() {
     moves += 1;
-    document.getElementById('moves-counter').textContent = moves;
+    const submitButton = document.getElementById("submit");
+    submitButton.textContent = `Submit | Moves: ${moves}`;
   }
 
 function increaseVal(currentVal, buttonNum, map=null) {

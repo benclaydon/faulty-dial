@@ -15,6 +15,13 @@
     align-items: center;
 }
 
+.dial-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: calc(0.2 * var(--min-display-size));
+}
+
 .segment {
     position: absolute;
     background-color: red;
@@ -52,7 +59,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.inc-dec-button:hover {
+.inc-dec-button:active {
     transform: scale(1.1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
@@ -65,3 +72,10 @@
 .e { bottom: calc(0.05 * var(--min-display-size)); left: 0; width: calc(0.05 * var(--min-display-size)); height: 40%; }
 .f { top: calc(0.05 * var(--min-display-size)); left: 0; width: calc(0.05 * var(--min-display-size)); height: 40%; }
 .g { top: 45%; left: 10%; width: 80%; height: calc(0.05 * var(--min-display-size)); }
+
+.move-counter {
+    color: white;
+    font-family: system-ui, sans-serif;
+    font-size: calc(0.125 * var(--min-display-size)); /* Adjust the multiplier as needed */
+}
+
